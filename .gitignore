@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+# Hide test ino used for testing library's operation
+/test
+*.json
