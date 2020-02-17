@@ -1,7 +1,10 @@
 # JsonSerialStream
 A library for Arduinos to output data in JSON format through the board's serial streams.
 
-## JSON Format
+<details>
+
+<summary> JSON Format Explained </summary>
+
 **J**ava**S**cript **O**bject **N**otation is standardize format of conveying large amounts of data and objects as serialized bytes. There exist libraries in almost any langauge toconvert JSON data back into an object. This essentially makes an easy way to send data as string bytes between devices, while maintaining a human readable format.  
 Note that JSON data is sent without whitespace, but it is often added for readability.
 
@@ -34,6 +37,12 @@ Arrays
   ]
 }
 ```
+</details>
+
+### Things to note
+* The serial stream must be initilized prior to the library being used.
+* The library has no malformed output protection. All opened messages and nested objects must be closed.
+* The data is output immediately as methods are called; the data is never stored. This improves performance.
 
 ## How to use
 1) Attach the JSON stream object to a serial stream with `JsonSerialStream(serial)` where the serial stream may be: `Serial`, `Serial1`, `Serial2`, or `Serial3`
