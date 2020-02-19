@@ -45,6 +45,38 @@ Arrays
 * The data is output immediately as methods are called; the data is never stored. This improves performance.
 
 ### To include:
+
+<details>
+<summary> Into a git repository </summary>
+
+1) Create a `src` folder in your sketch's directory.
+2) In terminal, navigate to the `src` directory.
+3) Run the command `git submodule add https://github.com/MSUSeconRobotics/JsonSerialStream.git`
+4) In your sketch, add `#include "src/JsonSerialStream/JsonSerialStream.h"`
+
+This results in a structure that looks like this:
++ ExampleSketch
+  + ExampleSketch.ino
+  + src
+    + JsonSerialStream
+      + JsonSerialStream.h
+      + JsonSerialStream.cpp
+
+Please note that to clone your git repo now, you **must** either:
+* Run `git clone --recurse-submodules <RepoURL>`
+
+    or
+
+1) Run `git clone <RepoURL>`
+2) Run `git submodule init`
+3) Run `git submodule update`
+
+
+</details>
+
+<details>
+<summary> Outside a git repository </summary>
+
 The recommended way of including this library into your sketch is to:
 1) Creating a `src` folder in your sketch's directory
 2) Cloning this repository into that `src` folder. 
@@ -57,12 +89,10 @@ This results in a structure that looks like this:
     + JsonSerialStream
       + JsonSerialStream.h
       + JsonSerialStream.cpp
-      + LICENSE
-      + README.md
-      + .gitignore
 
 You may also clone this repository into your Arduino libaries directory. Or you can extract the `.h` and `.cpp` and put them into your sketch directory.
 These are not advised as they can get cluttered, are hard to update, or may result in "works on my machine" as a result of different installed libraires.
+</details>
 
 ## How to use
 1) Attach the JSON stream object to a serial stream with `JsonSerialStream(serial)` where the serial stream may be: `Serial`, `Serial1`, `Serial2`, or `Serial3`
