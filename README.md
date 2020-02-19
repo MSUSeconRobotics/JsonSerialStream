@@ -71,6 +71,7 @@ Please note that to clone your git repo now, you **must** either:
 2) Run `git submodule init`
 3) Run `git submodule update`
 
+_Details can be found here: https://git-scm.com/book/en/v2/Git-Tools-Submodules_
 
 </details>
 
