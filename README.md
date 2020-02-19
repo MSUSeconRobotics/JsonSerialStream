@@ -44,6 +44,26 @@ Arrays
 * The library has no malformed output protection. All opened messages and nested objects must be closed.
 * The data is output immediately as methods are called; the data is never stored. This improves performance.
 
+### To include:
+The recommended way of including this library into your sketch is to:
+1) Creating a `src` folder in your sketch's directory
+2) Cloning this repository into that `src` folder. 
+3) In your sketch, add `#include "src/JsonSerialStream/JsonSerialStream.h"`
+
+This results in a structure that looks like this:
++ ExampleSketch
+  + ExampleSketch.ino
+  + src
+    + JsonSerialStream
+      + JsonSerialStream.h
+      + JsonSerialStream.cpp
+      + LICENSE
+      + README.md
+      + .gitignore
+
+You may also clone this repository into your Arduino libaries directory. Or you can extract the `.h` and `.cpp` and put them into your sketch directory.
+These are not advised as they can get cluttered, are hard to update, or may result in "works on my machine" as a result of different installed libraires.
+
 ## How to use
 1) Attach the JSON stream object to a serial stream with `JsonSerialStream(serial)` where the serial stream may be: `Serial`, `Serial1`, `Serial2`, or `Serial3`
 2) Open a JSON message to send with `.openMessage()` which will send an open brace indicating a new JSON object
